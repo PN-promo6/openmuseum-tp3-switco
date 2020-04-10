@@ -1,0 +1,25 @@
+<div class="row">
+
+  <div class="col-lg-3">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title h4"><span>🏛️ </span>{{name}}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-9">
+    <div class="card">
+      <div class="car-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item border-0"><span>📍 </span>{{adress}}<br>{{zip}} {{city}}</li>
+          <li class="list-group-item border-0"><span>🕒 </span>{{opening}}</li>
+          <li class="list-group-item border-0"><a href="{{website}}" class="card-link"><span>💻 </span>{{website}}</a></li>
+          <!-- <li class="list-group-item border-0"><a>{{reference}}</a></li> -->
+          <li class="list-group-item border-0"><a href="tel:{{phone}}"><span>📞 </span>{{telephone}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-5 mr-auto"><a routerLink="/"><span>⬅️ </span>Back to museum's list</a></p>
+  </div>
+</div>
