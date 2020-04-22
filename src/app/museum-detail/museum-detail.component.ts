@@ -41,5 +41,8 @@ export class MuseumDetailComponent implements OnInit {
     this.museumAdress = this.museumService.getMuseumByRefMusee(museumRef).adress;
     this.museumWebsite = this.museumService.getMuseumByRefMusee(museumRef).website;
     this.museumFax = this.museumService.getMuseumByRefMusee(museumRef).fax;
+
+
+
   }
 }
