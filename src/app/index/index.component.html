@@ -4,17 +4,10 @@
       <h1 class="py-4 h2"><span>🏛️ </span>Liste des musées</h1>
     </div>
     <div class="row">
-      <app-single-museum class="col-4"
-      *ngFor="let museum of museums"
-      [name]="museum.name"
-      [opening]="museum.opening"
-      [zip]="museum.zip"
-      [city]="museum.city"
-      [telephone]="museum.telephone"
-      [reference]="museum.reference"
-      [adress]="museum.adress"
-      [website]="museum.website"
-       > </app-single-museum>
+      <app-single-museum class="col-4" *ngFor="let museum of museums" [name]="museum.name" [opening]="museum.opening"
+        [zip]="museum.zip" [city]="museum.city" [telephone]="museum.telephone" [museumRef]="museum.ref_musee"
+        [adress]="museum.adress" [website]="museum.website">
+      </app-single-museum>
     </div>
   </div>
 </div>

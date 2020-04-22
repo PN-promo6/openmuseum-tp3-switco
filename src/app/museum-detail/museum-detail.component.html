@@ -1,25 +1,74 @@
-<div class="row">
-
-  <div class="col-lg-3">
-    <div class="card">
-      <div class="card-body">
-        <h2 class="card-title h4"><span>🏛️ </span>{{name}}</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <h1>🏛️ {{museumName}}</h1>
+    </div>
+    <div class="col-sm-3">
+      🗺️
+      <!-- Here come the map ! :carte_du_monde: -->
+      <div style="height: 300px;" leaflet [leafletOptions]="options">
       </div>
     </div>
-  </div>
-
-  <div class="col-lg-9">
-    <div class="card">
-      <div class="car-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item border-0"><span>📍 </span>{{adress}}<br>{{zip}} {{city}}</li>
-          <li class="list-group-item border-0"><span>🕒 </span>{{opening}}</li>
-          <li class="list-group-item border-0"><a href="{{website}}" class="card-link"><span>💻 </span>{{website}}</a></li>
-          <!-- <li class="list-group-item border-0"><a>{{reference}}</a></li> -->
-          <li class="list-group-item border-0"><a href="tel:{{phone}}"><span>📞 </span>{{telephone}}</a></li>
-        </ul>
-      </div>
+    <div class="col-sm-9">
+      <article class="card shadow-sm mb-2">
+        <div class="card-body">
+          <div class="">
+            <!-- PHOTO -->
+          </div>
+          <!-- Localisation -->
+          <div class="row mb-2">
+            <div class="col-1">
+              📍
+            </div>
+            <div class="col-10">
+              <p class="card-text">
+                {{museumAdress}}<br>
+                {{museumZip}} {{museumCity | titlecase}}
+              </p>
+            </div>
+          </div>
+          <!-- Phone -->
+          <div class="row mb-2">
+            <div class="col-1">
+              📞
+            </div>
+            <div class="col-10">
+              <p class="card-text"><a href="{{museumTelephone}}">{{museumTelephone}}</a></p>
+            </div>
+          </div>
+          <!-- Fax -->
+          <div class="row mb-2">
+            <div class="col-1">
+              📠
+            </div>
+            <div class="col-10">
+              <p class="card-text"><a href="{{museumFax}}">{{museumFax}}</a></p>
+            </div>
+          </div>
+          <!-- Website -->
+          <div class="row mb-2">
+            <div class="col-1">
+              💻
+            </div>
+            <div class="col-10">
+              <p class="card-text">
+                <a href="{{museumWebsite}}" target="blank">{{museumWebsite}}</a>
+              </p>
+            </div>
+          </div>
+          <!-- Opening hours -->
+          <div class="row mb-2">
+            <div class="col-1">
+              🕒
+            </div>
+            <div class="col-10">
+              <p class="card-text">{{museumOpening}}</p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <p class="mt-3">
+        <a routerLink="/" class="text-secondary">👈 Back to museum's list</a>
+      </p>
     </div>
-    <p class="mt-5 mr-auto"><a routerLink="/"><span>⬅️ </span>Back to museum's list</a></p>
   </div>
-</div>

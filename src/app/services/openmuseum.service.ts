@@ -1,4 +1,4 @@
-export class MuseumService{
+export class MuseumService {
   museums = [{
     opening: "Ouvert du 16 septembre au 14 juin de 10h à 12h et de 14h à 18h, du  15 juin au 15 septembre de 10h à 18h. Nocturnes en juillet et aout le mercredi et le vendredi jusqu'à 20h",
     name: "Musée Picasso",
@@ -9,7 +9,7 @@ export class MuseumService{
     banCardinals: [43.580993, 7.127959],
     cardinals: [43.580993, 7.127959],
     website: "www.antibes-juanlespins.com",
-    reference: "0600401",
+    ref_musee: "0600401",
     cpCardinals: [43.5876536208, 7.10542360834],
     telephone: "0492905420",
     closing: "1er janvier, le 1er mai, le 1er novembre et le 25 décembre",
@@ -28,7 +28,7 @@ export class MuseumService{
     banCardinals: [43.845611, 6.2213519999999995],
     cardinals: [43.845611, 6.2213519999999995],
     website: "http://www.moustiers.eu/Musee-de-la-faience",
-    reference: "0413501",
+    ref_musee: "0413501",
     telephone: "0492746164",
     closing: "1er Janvier au 5 février",
     cpCardinals: [43.8382123386, 6.22822943235],
@@ -46,7 +46,7 @@ export class MuseumService{
     banCardinals: [43.531176, 5.442093],
     cardinals: [43.531176, 5.442093],
     website: "www.aixenprovence.fr/Pavillon-de-Vendome-465",
-    reference: "1300101",
+    ref_musee: "1300101",
     telephone: "0442918875",
     closing: "1er mai, 25 décembre",
     cpCardinals: [43.5353485115, 5.4345381961],
@@ -64,7 +64,7 @@ export class MuseumService{
     banCardinals: [43.697686, 7.27733],
     cardinals: [43.697686, 7.27733],
     website: "http://www.nice.fr/fr/culture/musees-et-galerie/palais-lascaris-le-palais",
-    reference: "0608808",
+    ref_musee: "0608808",
     telephone: "0493627240",
     closing: "1er janvier, dimanche de Pâques, 1er mai, 25 décembre",
     cpCardinals: [43.7122279855, 7.23752896461],
@@ -82,7 +82,7 @@ export class MuseumService{
     banCardinals: [43.173755, 5.60973],
     cardinals: [43.173755, 5.60973],
     website: "www.museeciotaden.org",
-    reference: "1302801",
+    ref_musee: "1302801",
     telephone: "0442714099",
     closing: "Noël, 1er mai",
     cpCardinals: [43.2057739447, 5.6225082578],
@@ -100,7 +100,7 @@ export class MuseumService{
     banCardinals: [44.382664, 4.987351],
     cardinals: [44.382664, 4.987351],
     website: "www.vaucluse.fr/culture-patrimoine/les-musees-departementaux/le-musee-du-cartonnage-et-de-limprimerie/",
-    reference: "8413801",
+    ref_musee: "8413801",
     telephone: "0490355875",
     closing: "Jours fériés (sauf 14 juillet et 15 aout)",
     cpCardinals: [44.3773036634, 4.97155340684],
@@ -118,7 +118,7 @@ export class MuseumService{
     banCardinals: [43.181669, 6.039146],
     cardinals: [43.181669, 6.039146],
     website: "www.solliesville.fr",
-    reference: "8313201",
+    ref_musee: "8313201",
     telephone: "0494337202",
     closing: "Pâques, 1er novembre, Noël et jour de l'An",
     cpCardinals: [43.2011646228, 6.01550347803],
@@ -135,7 +135,7 @@ export class MuseumService{
     fax: "0494021588",
     cardinals: [43.1364016655, 5.93275623187],
     website: "www.musee-marine.fr/toulon",
-    reference: "8313704",
+    ref_musee: "8313704",
     telephone: "0494020201",
     closing: "1er janvier, 1er mai, 25 décembre",
     cpCardinals: [43.1364016655, 5.93275623187],
@@ -152,7 +152,7 @@ export class MuseumService{
     fax: "0483954428",
     cardinals: [43.15297354, 5.93725605869],
     website: "www.museum-toulonvar.fr",
-    reference: "8313701",
+    ref_musee: "8313701",
     telephone: "0483954420",
     closing: "Jours fériés",
     cpCardinals: [43.15297354, 5.93725605869],
@@ -170,7 +170,7 @@ export class MuseumService{
     banCardinals: [43.694886, 7.248937],
     cardinals: [43.694886, 7.248937],
     website: "www.musee-beaux-arts-nice.org",
-    reference: "0608803",
+    ref_musee: "0608803",
     telephone: "0492152828",
     closing: "1er janvier, le dimanche de Pâques, le 1er mai, le 25 décembre",
     cpCardinals: [43.7122279855, 7.23752896461],
@@ -188,7 +188,7 @@ export class MuseumService{
     banCardinals: [43.701924, 7.279572],
     cardinals: [43.701924, 7.279572],
     website: "www.mhnnice.org ou www.nice-coteazur.org",
-    reference: "0608806",
+    ref_musee: "0608806",
     telephone: "0497134680",
     closing: "1er janvier, dimanche de Pâques, 1er mai, 25 décembre",
     cpCardinals: [43.7122279855, 7.23752896461],
@@ -204,7 +204,7 @@ export class MuseumService{
     city: "ARLES Cédex",
     fax: "0413315137",
     website: "www.arles-antiques.cg13.fr",
-    reference: "1300405",
+    ref_musee: "1300405",
     telephone: "0413315103",
     closing: "1er janvier, 1er mai, 1er novembre, 25 décembre",
     zip: "13635",
@@ -213,10 +213,10 @@ export class MuseumService{
   }
   ]
 
-  getMuseumByRefMusee(refMusee: any) {
+  getMuseumByRefMusee(museumRef: string) {
     const museum = this.museums.find(
       (s) => {
-        return s.reference === refMusee;
+        return s.ref_musee === museumRef;
       }
     );
     return museum;

@@ -25,7 +25,7 @@
         📞
       </div>
       <div class="col-10">
-        <p class="card-text"><a href="tel:{{museumPhone}}">{{telephone}}</a></p>
+        <p class="card-text"><a href="tel:{{telephone}}">{{telephone}}</a></p>
       </div>
     </div>
     <!-- Website -->
@@ -35,7 +35,7 @@
       </div>
       <div class="col-10">
         <p class="card-text">
-          <a href="https://{{museumWebSite}}" target="blank">{{website}}</a>
+          <a href="https://{{website}}" target="blank">{{website}}</a>
         </p>
       </div>
     </div>
@@ -54,7 +54,7 @@
         ➕
       </div>
       <div class="col-10">
-        <p class="card-text"><a routerLink='museumDetail' class="card-link">View details</a></p>
+        <p class="card-text"><a [routerLink]="['museumDetail/', museumRef]" class="card-link">View details</a></p>
       </div>
     </div>
 
