@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MuseumService } from '../services/openmuseum.service';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { tileLayer, latLng } from 'leaflet';
 
 @Component({
   selector: 'app-museum-detail',
@@ -20,16 +18,9 @@ export class MuseumDetailComponent implements OnInit {
   museumAdress: string;
   museumWebsite: string;
   museumFax: string;
+  museumCoord: number[];
 
-  options = {
-    layers: [
-      tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
-    ],
-    zoom: 5,
-    center: latLng(46.879966, -121.726909)
-  };
-
-  constructor(private museumService: MuseumService, private route: ActivatedRoute, private leafletModule: LeafletModule) { }
+  constructor(private museumService: MuseumService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     const museumRef = this.route.snapshot.params['museumRef']; // dans cette route, tu prends une photo du paramètre qui s'appelle (ici) mueseumRef
@@ -41,8 +32,7 @@ export class MuseumDetailComponent implements OnInit {
     this.museumAdress = this.museumService.getMuseumByRefMusee(museumRef).adress;
     this.museumWebsite = this.museumService.getMuseumByRefMusee(museumRef).website;
     this.museumFax = this.museumService.getMuseumByRefMusee(museumRef).fax;
-
-
+    this.museumCoord = this.museumService.getMuseumByRefMusee(museumRef).cpCardinals;
 
   }
 }

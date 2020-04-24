@@ -9,7 +9,7 @@ import { IndexComponent } from './index/index.component';
 import { AddMuseumComponent } from './add-museum/add-museum.component';
 import { MuseumDetailComponent } from './museum-detail/museum-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapComponent } from './map/map.component';
 
 const appRoutes: Routes = [
   // Les routes se déclarent dans un ordre précis
@@ -27,13 +27,13 @@ const appRoutes: Routes = [
     IndexComponent,
     AddMuseumComponent,
     MuseumDetailComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MapComponent
   ],
 
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    LeafletModule
   ],
 
   providers: [MuseumService],
