@@ -1,0 +1,9 @@
+/* LINKS */
+a {
+    color: black;
+}
+
+a:hover {
+    color: teal;
+    text-decoration: none;
+}

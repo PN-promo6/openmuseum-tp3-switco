@@ -13,7 +13,7 @@ export class MuseumDetailComponent implements OnInit {
   museumName: string;
   museumOpening: string;
   museumZip: string;
-  museumCity: string;
+  museumville: string;
   museumTelephone: string;
   museumAdress: string;
   museumWebsite: string;
@@ -24,15 +24,15 @@ export class MuseumDetailComponent implements OnInit {
 
   ngOnInit() {
     const museumRef = this.route.snapshot.params['museumRef']; // dans cette route, tu prends une photo du paramètre qui s'appelle (ici) mueseumRef
-    this.museumName = this.museumService.getMuseumByRefMusee(museumRef).name;
-    this.museumOpening = this.museumService.getMuseumByRefMusee(museumRef).opening;
-    this.museumZip = this.museumService.getMuseumByRefMusee(museumRef).zip;
-    this.museumCity = this.museumService.getMuseumByRefMusee(museumRef).city;
+    this.museumName = this.museumService.getMuseumByRefMusee(museumRef).nom_du_musee;
+    this.museumOpening = this.museumService.getMuseumByRefMusee(museumRef).periode_ouverture;
+    this.museumZip = this.museumService.getMuseumByRefMusee(museumRef).cp;
+    this.museumville = this.museumService.getMuseumByRefMusee(museumRef).ville;
     this.museumTelephone = this.museumService.getMuseumByRefMusee(museumRef).telephone;
-    this.museumAdress = this.museumService.getMuseumByRefMusee(museumRef).adress;
-    this.museumWebsite = this.museumService.getMuseumByRefMusee(museumRef).website;
+    this.museumAdress = this.museumService.getMuseumByRefMusee(museumRef).adr;
+    this.museumWebsite = this.museumService.getMuseumByRefMusee(museumRef).sitweb;
     this.museumFax = this.museumService.getMuseumByRefMusee(museumRef).fax;
-    this.museumCoord = this.museumService.getMuseumByRefMusee(museumRef).cpCardinals;
+    this.museumCoord = this.museumService.getMuseumByRefMusee(museumRef).coordonnees_cp;
 
   }
 }
