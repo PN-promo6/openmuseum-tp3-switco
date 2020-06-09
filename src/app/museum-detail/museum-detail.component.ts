@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MuseumService } from '../services/openmuseum.service';
+
+import { Museum } from '../models/museum/museum';
+import { DataService } from '../services/data-service/data.service';
 
 @Component({
   selector: 'app-museum-detail',
@@ -9,30 +11,23 @@ import { MuseumService } from '../services/openmuseum.service';
 })
 
 export class MuseumDetailComponent implements OnInit {
-  museumRef: string;
-  museumName: string;
-  museumOpening: string;
-  museumZip: string;
-  museumville: string;
-  museumTelephone: string;
-  museumAdress: string;
-  museumWebsite: string;
-  museumFax: string;
-  museumCoord: number[];
 
-  constructor(private museumService: MuseumService, private route: ActivatedRoute) { }
+  public museum: Museum;
 
-  ngOnInit() {
-    const museumRef = this.route.snapshot.params['museumRef']; // dans cette route, tu prends une photo du paramètre qui s'appelle (ici) mueseumRef
-    this.museumName = this.museumService.getMuseumByRefMusee(museumRef).nom_du_musee;
-    this.museumOpening = this.museumService.getMuseumByRefMusee(museumRef).periode_ouverture;
-    this.museumZip = this.museumService.getMuseumByRefMusee(museumRef).cp;
-    this.museumville = this.museumService.getMuseumByRefMusee(museumRef).ville;
-    this.museumTelephone = this.museumService.getMuseumByRefMusee(museumRef).telephone;
-    this.museumAdress = this.museumService.getMuseumByRefMusee(museumRef).adr;
-    this.museumWebsite = this.museumService.getMuseumByRefMusee(museumRef).sitweb;
-    this.museumFax = this.museumService.getMuseumByRefMusee(museumRef).fax;
-    this.museumCoord = this.museumService.getMuseumByRefMusee(museumRef).coordonnees_cp;
+  constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
+  ngOnInit(): void {
+    const museum_id = this.route.snapshot.params['museumId']; // dans cette route, tu prends une photo du paramètre qui s'appelle museum_id
+
+    this.dataService.fetchMuseumById(museum_id)
+      .subscribe(
+        res => {
+          this.museum = res;
+          console.log(res);
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 }

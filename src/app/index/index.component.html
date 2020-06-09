@@ -4,10 +4,10 @@
       <h1 class="h2"><span>🏛️ </span>Liste des musées</h1>
     </div>
     <div class="row">
-      <app-single-museum class="col-4" *ngFor="let museum of museums" [name]="museum.nom_du_musee"
-        [opening]="museum.periode_ouverture" [zip]="museum.cp" [city]="museum.ville" [telephone]="museum.telephone"
-        [museumRef]="museum.ref_musee" [adress]="museum.adr" [website]="museum.sitweb">
+      <app-single-museum class="col-6" *ngFor="let museum of museums" [museum]="museum">
+        <!--Permet d'envoyer les données depuis index vers single-museum-->
       </app-single-museum>
+
     </div>
   </div>
 </div>

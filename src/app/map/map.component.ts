@@ -11,15 +11,22 @@ export class MapComponent implements AfterViewInit {
 
   private map: any;
   @Input() museumCoord: number[];
+  icon = {
+    icon: L.icon({
+      iconSize: [25, 41],
+      iconAnchor: [13, 41],
+      iconUrl: '../../../assets//marker-icon.png',
+      shadowUrl: '../../../assets/marker-shadow.png'
+    })
+  };
 
   constructor() { }
 
   private initMuseumMap(): void {
     this.map = L.map('map', {
-      center: [46.227638, 2.213749],
-      zoom: 5
+      center: [this.museumCoord[0], this.museumCoord[1]],
+      zoom: 5,
     });
-
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -27,18 +34,12 @@ export class MapComponent implements AfterViewInit {
 
     tiles.addTo(this.map);
 
-    // const marker = L.marker([39.8282, -98.5795]);
-    // marker.addTo(this.map);
-
-    const myIcon = L.icon({
-      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/marker-icon.png'
-    });
-    L.marker([46.227638, 2.213749], { icon: myIcon }).bindPopup('Toupi Kun').addTo(this.map).openPopup();
+    const marker = L.marker([this.museumCoord[0], this.museumCoord[1]], this.icon);
+    marker.addTo(this.map);
   }
 
   ngAfterViewInit(): void {
 
     this.initMuseumMap();
   }
-
 }

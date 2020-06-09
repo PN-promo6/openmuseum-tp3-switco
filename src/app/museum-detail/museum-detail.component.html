@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-12 my-4">
-      <h1 class="h2">🏛️ {{museumName}}</h1>
+      <h1 class="h2">🏛️ {{museum.name}}</h1>
     </div>
 
     <div class="col-sm-5">
       <!-- Here comes the map ! -->
-      <app-map [museumCoord]="museumCoord"></app-map>
+      <app-map [museumCoord]="museum.coordinates"></app-map>
       <p class="mt-3">
         <a routerLink="/" class="">👈 Back to museum's list</a>
       </p>
@@ -25,47 +25,49 @@
             </div>
             <div class="col-10">
               <p class="card-text">
-                {{museumAdress}}<br>
-                {{museumZip}} {{museumCity | titlecase}}
+                {{museum.address}}<br>
+                {{museum.cp}} {{museum.city | titlecase}}
               </p>
             </div>
           </div>
           <!-- Phone -->
-          <div class="row mb-2">
+          <div *ngIf="museum.telephone" class="row mb-2">
             <div class="col-1">
               📞
             </div>
             <div class="col-10">
-              <p class="card-text"><a href="{{museumTelephone}}">{{museumTelephone}}</a></p>
+              <p class="card-text"><a href="{{museum.telephone}}">{{museum.telephone}}</a></p>
             </div>
           </div>
           <!-- Fax -->
-          <div class="row mb-2">
+          <div *ngIf="museum.fax" class="row mb-2">
             <div class="col-1">
               📠
             </div>
+
             <div class="col-10">
-              <p class="card-text"><a href="{{museumFax}}">{{museumFax}}</a></p>
+              <p class="card-text"><a href="{{museum.fax}}">{{museum.fax}}</a></p>
             </div>
+
           </div>
           <!-- Website -->
-          <div class="row mb-2">
+          <div *ngIf="museum.website" class="row mb-2">
             <div class="col-1">
               💻
             </div>
             <div class="col-10">
               <p class="card-text">
-                <a href="{{museumWebsite}}" target="blank">{{museumWebsite}}</a>
+                <a href="{{museum.website}}" target="blank">{{museum.website}}</a>
               </p>
             </div>
           </div>
           <!-- periode_ouverture hours -->
-          <div class="row mb-2">
+          <div *ngIf="museum.opening" class="row mb-2">
             <div class="col-1">
               🕒
             </div>
             <div class="col-10">
-              <p class="card-text">{{museumOpening}}</p>
+              <p class="card-text">{{museum.opening}}</p>
             </div>
           </div>
         </div>

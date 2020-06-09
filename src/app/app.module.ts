@@ -1,43 +1,44 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { MuseumService } from './services/openmuseum.service';
-import { SingleMuseumComponent } from './single-museum/single-museum.component';
-import { IndexComponent } from './index/index.component';
 import { AddMuseumComponent } from './add-museum/add-museum.component';
-import { MuseumDetailComponent } from './museum-detail/museum-detail.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DataService } from './services/data-service/data.service';
+import { IndexComponent } from './index/index.component';
 import { MapComponent } from './map/map.component';
-
-const appRoutes: Routes = [
-  // Les routes se déclarent dans un ordre précis
-  { path: 'add', component: AddMuseumComponent },
-  { path: 'museumDetail/:museumRef', component: MuseumDetailComponent },
-  { path: '', component: IndexComponent },
-  { path: 'not-found', component: NotFoundComponent },
-  { path: '**', redirectTo: 'not-found' }
-]
+import { MuseumDetailComponent } from './museum-detail/museum-detail.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SingleMuseumComponent } from './single-museum/single-museum.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SingleMuseumComponent,
-    IndexComponent,
     AddMuseumComponent,
+    AppComponent,
+    IndexComponent,
+    MapComponent,
     MuseumDetailComponent,
+    NavbarComponent,
     NotFoundComponent,
-    MapComponent
+    SingleMuseumComponent
   ],
 
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
 
-  providers: [MuseumService],
-  bootstrap: [AppComponent]
+  providers: [
+    DataService
+  ],
+
+  bootstrap: [
+    AppComponent
+  ]
+
 })
 
 export class AppModule { }

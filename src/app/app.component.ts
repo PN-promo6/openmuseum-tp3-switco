@@ -1,5 +1,4 @@
-import { Component,OnInit } from '@angular/core';
-import {MuseumService} from './services/openmuseum.service'
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,7 @@ import {MuseumService} from './services/openmuseum.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(){}
-  ngOnInit(){}
+  constructor() { }
+  ngOnInit() { }
 
 }
