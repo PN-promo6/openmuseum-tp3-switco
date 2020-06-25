@@ -1,0 +1,10 @@
+#underline-title:after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: #80aeff;
+    width: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
